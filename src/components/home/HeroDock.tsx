@@ -365,6 +365,35 @@ export default function HeroDock({
             }}
           />
 
+          {/* --- Co-founder, standing right behind the founder ---
+              Same data-portrait hook as the main portrait, so the scroll
+              animation blurs and fades both together. Like the founder he
+              stands in front of the big lettering (z-5 vs the wordmark's z-0, the
+              founder on top at z-10).
+              The photo is a full portrait, so it is scaled up until his head is
+              the same size as the founder's and top-aligned to the same line;
+              the mask is the founder's own, shifted to sit on the head and
+              shoulders. A background, not an <img>, so a missing /tony.jpg just
+              renders nothing. */}
+          <div
+            data-portrait
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-[9.5svh] z-[5] flex justify-center md:top-[8.6svh] lg:top-[1.8svh]"
+          >
+            <div
+              className="aspect-[1116/2000] h-[45svh] translate-x-[17vw] bg-cover bg-top md:h-[62svh] md:translate-x-[20vw] lg:h-[94svh] lg:translate-x-[13vw]"
+              style={{
+                // A real transparent cutout (tony-cutout.webp), so there is no
+                // backdrop glow. Same bottom fade the founder's portrait uses.
+                backgroundImage: "url(/tony-cutout.webp)",
+                maskImage:
+                  "radial-gradient(ellipse 80% 42% at 50% 32%, #000 56%, transparent 100%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 80% 42% at 50% 32%, #000 56%, transparent 100%)",
+              }}
+            />
+          </div>
+
           {/* --- Giant wordmark. Sits behind the portrait. --- */}
           <h1
             data-wordmark
@@ -378,30 +407,6 @@ export default function HeroDock({
             {wordmark}
           </h1>
 
-          {/* --- Co-founder, standing behind the founder ---
-              Same data-portrait hook as the main portrait, so the scroll
-              animation blurs and fades both together. A background rather than
-              an <img> so a missing /tony.jpg just renders nothing. The photo
-              is a full portrait on a near-black backdrop; the mask keeps only
-              the head and shoulders and melts the rest into the hero ground. */}
-          <div
-            data-portrait
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-[12svh] z-[5] flex justify-center lg:top-[9svh]"
-          >
-            <div
-              className="aspect-[1116/2000] h-[36svh] translate-x-[25vw] bg-cover bg-top lg:h-[58svh] lg:translate-x-[17vw]"
-              style={{
-                backgroundImage: "url(/tony.jpg)",
-                filter: "brightness(0.78) contrast(1.05)",
-                maskImage:
-                  "radial-gradient(ellipse 58% 40% at 50% 42%, #000 46%, transparent 100%)",
-                WebkitMaskImage:
-                  "radial-gradient(ellipse 58% 40% at 50% 42%, #000 46%, transparent 100%)",
-              }}
-            />
-          </div>
-
           {/* --- Portrait ---
               Anchored from the TOP, not the bottom. This is a head-and-
               shoulders crop, so the face is roughly 60% of the frame — bottom-
@@ -412,7 +417,7 @@ export default function HeroDock({
           <div
             data-portrait
             aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 top-[9svh] z-10 flex justify-center lg:top-[6svh]"
+            className="pointer-events-none absolute inset-x-0 top-[11svh] z-10 flex -translate-x-[17vw] justify-center md:top-[9svh] md:-translate-x-[9vw] lg:top-[6svh] lg:-translate-x-[11vw]"
           >
             {portraitFailed ? (
               <Silhouette />
@@ -424,7 +429,7 @@ export default function HeroDock({
                 src="/founder.png"
                 alt=""
                 onError={() => setPortraitFailed(true)}
-                className="h-[46svh] w-auto object-contain lg:h-[64svh]"
+                className="h-[31svh] w-auto object-contain md:h-[46svh] lg:h-[64svh]"
                 style={{
                   maskImage:
                     "radial-gradient(ellipse 64% 76% at 50% 38%, #000 56%, transparent 100%)",

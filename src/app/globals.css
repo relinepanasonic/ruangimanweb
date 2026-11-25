@@ -126,12 +126,12 @@ html.lenis body {
 /* The giant wordmark is sized to very nearly span the stage. On a phone that
    would run it under the top bar, so it starts lower and smaller there. */
 [data-wordmark] {
-  top: 11vh;
+  top: 8.8vh;
   font-size: min(13.5vw, 10vh);
 }
 @media (min-width: 1024px) {
   [data-wordmark] {
-    top: 3vh;
+    top: 0.5vh;
     font-size: min(15vw, 26vh);
   }
 }
