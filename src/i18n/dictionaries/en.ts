@@ -223,28 +223,28 @@ const en: Dictionary = {
         slug: "doa",
         icon: "hands",
         title: "Catholic Prayer",
-        body: "The Rosary with 2D and 3D beads and the Scripture for each mystery, the Stations of the Cross, prayers in Aramaic and the Saint Benedict Medal prayer. All of it ready to open.",
-        tags: ["3D Rosary", "Stations of the Cross", "Aramaic"],
+        body: "The Stations of the Cross in 14 stops, prayers in Aramaic, the Saint Benedict Medal prayer, plus daily and basic prayers. All of it ready to open.",
+        tags: ["Stations of the Cross", "Aramaic", "Daily prayers"],
       },
       {
         slug: "temukan",
         icon: "users",
-        title: "Find Each Other",
-        body: "Find fellow Catholics from your communities and your city, send a friend request, and start getting to know each other without the awkwardness.",
+        title: "Connect with Fellow Catholics",
+        body: "From your communities and your city, find others walking the same way. Send a friend request, then get to know each other without the awkwardness.",
         tags: ["Communities", "City", "Friends"],
       },
       {
-        slug: "chat",
-        icon: "chat",
-        title: "Private & Group Chat",
-        body: "Talk one to one, or start a group for your community. Conversations that don't drown under a hundred other messages.",
-        tags: ["Direct messages", "Groups", "Media"],
+        slug: "rosario",
+        icon: "hands",
+        title: "Beautiful Rosario",
+        body: "Pray the Rosary with glowing beads in 2D or 3D. Swipe the dial to move bead by bead, and every mystery comes with its Scripture.",
+        tags: ["3D view", "Verse for each mystery", "Glowing beads"],
       },
       {
         slug: "pusat-komunitas",
         icon: "calendar",
-        title: "Community Center",
-        body: "For community leaders: create events and camps, manage crew and meetings, look after members, and run Connect Groups. All in one place.",
+        title: "All Community Activity in One App",
+        body: "Create events and camps, manage crew and meetings, look after members and run Connect Groups. Everything your community does lives in one place.",
         tags: ["Events & camps", "Connect Groups", "Members"],
       },
       {
@@ -279,13 +279,6 @@ const en: Dictionary = {
         tags: ["3D view", "Swipe dial", "Glowing beads"],
       },
       {
-        shot: "3-rosario-ayat.jpg",
-        icon: "bible",
-        title: "Rosary with Scripture",
-        body: "Choose the Joyful, Luminous, Sorrowful or Glorious Mysteries. Each mystery comes with its Bible passage, so you meditate as you pray.",
-        tags: ["4 mysteries", "Verse for each", "Jump between parts"],
-      },
-      {
         shot: "5-alkitab.jpg",
         icon: "bible",
         title: "A Bible you can listen to",
@@ -293,13 +286,55 @@ const en: Dictionary = {
         tags: ["Read aloud", "Word search", "Favourite verses"],
       },
     ],
-    more: [
+    flows: [
+      {
+        icon: "users",
+        title: "Open your community to Ruang Iman users",
+        intro: "From an idea to real activity. Every step lives in the Community Center.",
+        steps: [
+          {
+            title: "Create your community",
+            body: "Give it a name, a logo and a tagline, then write an About page you can share on WhatsApp.",
+          },
+          {
+            title: "Open it to Ruang Iman users",
+            body: "Choose open to anyone, or admin approval with your own sign-up questions.",
+          },
+          {
+            title: "Welcome members",
+            body: "Approve join requests, add members who already have an account, and invite those who do not.",
+          },
+          {
+            title: "Run your activities",
+            body: "Create events, camps and Connect Groups, then manage the crew and the members.",
+          },
+        ],
+      },
       {
         icon: "calendar",
-        title: "Event registration and QR tickets",
-        body: "People register through a short link without logging in and get a QR ticket at once. Organisers scan at the door, then download the attendance list to Excel or PDF.",
-        soon: true,
+        title: "Event ticketing with QR",
+        intro: "From registration to attendance, paperless and simple.",
+        steps: [
+          {
+            title: "Share the sign-up link",
+            body: "People register through a short link without logging in. A Ruang Iman account is created for them automatically.",
+          },
+          {
+            title: "QR ticket, instantly",
+            body: "The ticket appears on screen and can be downloaded, ready to show at the door.",
+          },
+          {
+            title: "Scan at the entrance",
+            body: "Organisers scan the QR to record attendance, with the scan time and who scanned.",
+          },
+          {
+            title: "Download the attendance list",
+            body: "Export to Excel or PDF, or print A5 tickets and business-card tickets with your own design.",
+          },
+        ],
       },
+    ],
+    more: [
       {
         icon: "users",
         title: "Connect Groups",

@@ -378,6 +378,30 @@ export default function HeroDock({
             {wordmark}
           </h1>
 
+          {/* --- Co-founder, standing behind the founder ---
+              Same data-portrait hook as the main portrait, so the scroll
+              animation blurs and fades both together. A background rather than
+              an <img> so a missing /tony.jpg just renders nothing. The photo
+              is a full portrait on a near-black backdrop; the mask keeps only
+              the head and shoulders and melts the rest into the hero ground. */}
+          <div
+            data-portrait
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-[12svh] z-[5] flex justify-center lg:top-[9svh]"
+          >
+            <div
+              className="aspect-[1116/2000] h-[36svh] translate-x-[25vw] bg-cover bg-top lg:h-[58svh] lg:translate-x-[17vw]"
+              style={{
+                backgroundImage: "url(/tony.jpg)",
+                filter: "brightness(0.78) contrast(1.05)",
+                maskImage:
+                  "radial-gradient(ellipse 58% 40% at 50% 42%, #000 46%, transparent 100%)",
+                WebkitMaskImage:
+                  "radial-gradient(ellipse 58% 40% at 50% 42%, #000 46%, transparent 100%)",
+              }}
+            />
+          </div>
+
           {/* --- Portrait ---
               Anchored from the TOP, not the bottom. This is a head-and-
               shoulders crop, so the face is roughly 60% of the frame — bottom-
@@ -506,7 +530,7 @@ export default function HeroDock({
 
             <p
               data-hero-fade
-              className="mt-4 text-xs tracking-wide text-brand-muted [@media(max-height:760px)]:hidden"
+              className="mt-4 text-xs tracking-wide text-brand-muted max-lg:hidden [@media(max-height:760px)]:hidden"
             >
               {dict.hero.foundedBy}{" "}
               <span className="font-semibold text-brand-light">

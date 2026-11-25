@@ -93,7 +93,49 @@ export default function WhatsNew({ dict }: { dict: Dictionary }) {
           ))}
         </div>
 
-        <ul className="mt-24 grid gap-4 sm:mt-32 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Step-by-step features: how a community goes live, and how an event
+            sells and checks in tickets. No screenshots, just the process. */}
+        <div className="mt-24 space-y-8 sm:mt-32">
+          {w.flows.map((flow) => (
+            <Reveal
+              key={flow.title}
+              as="article"
+              className="rounded-3xl border border-brand-gold/20 bg-brand-surface/60 p-6 sm:p-10"
+            >
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand-gold/25 bg-brand-gold/10 text-brand-gold">
+                  <FeatureIcon name={flow.icon} className="h-6 w-6" />
+                </span>
+                <h3 className="text-balance text-[clamp(1.4rem,3vw,2rem)] font-bold leading-tight tracking-[-0.03em] text-brand-light">
+                  {flow.title}
+                </h3>
+              </div>
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.8] text-brand-muted">
+                {flow.intro}
+              </p>
+              <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {flow.steps.map((step, i) => (
+                  <li
+                    key={step.title}
+                    className="rounded-2xl border border-white/8 bg-brand-bg/60 p-5"
+                  >
+                    <span className="font-serif text-sm italic text-brand-gold/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h4 className="mt-2 text-base font-bold text-brand-light">
+                      {step.title}
+                    </h4>
+                    <p className="mt-2 text-[0.92rem] leading-[1.65] text-brand-muted">
+                      {step.body}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+          ))}
+        </div>
+
+        <ul className="mt-16 grid gap-4 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           {w.more.map((item, i) => (
             <Reveal
               key={item.title}

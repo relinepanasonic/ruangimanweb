@@ -243,28 +243,28 @@ const id = {
         slug: "doa",
         icon: "hands",
         title: "Doa Katolik",
-        body: "Rosario dengan manik 2D dan 3D beserta ayat tiap peristiwa, Jalan Salib 14 perhentian, doa dalam bahasa Aram, dan Doa Medali Santo Benediktus. Semuanya siap dibuka.",
-        tags: ["Rosario 3D", "Jalan Salib", "Doa Aram"],
+        body: "Jalan Salib 14 perhentian, doa dalam bahasa Aram, Doa Medali Santo Benediktus, serta doa harian dan doa dasar. Semuanya siap dibuka, tinggal cari.",
+        tags: ["Jalan Salib", "Doa Aram", "Doa harian"],
       },
       {
         slug: "temukan",
         icon: "users",
-        title: "Temukan Sesama",
-        body: "Temukan sesama umat dari komunitas dan kotamu, kirim permintaan pertemanan, dan mulai kenalan tanpa rasa canggung.",
+        title: "Terhubung dengan Sesama Umat",
+        body: "Dari komunitas dan kotamu, temukan umat lain yang sedang berjalan ke arah yang sama. Kirim permintaan pertemanan, lalu kenalan tanpa rasa canggung.",
         tags: ["Komunitas", "Kota", "Teman"],
       },
       {
-        slug: "chat",
-        icon: "chat",
-        title: "Chat Pribadi & Grup",
-        body: "Ngobrol berdua atau bikin grup untuk komunitasmu. Percakapan yang tidak tenggelam di antara ratusan pesan lain.",
-        tags: ["Pesan pribadi", "Grup", "Media"],
+        slug: "rosario",
+        icon: "hands",
+        title: "Beautiful Rosario",
+        body: "Berdoa Rosario dengan manik yang bercahaya, dalam tampilan 2D atau 3D. Geser dial untuk berpindah manik, dan setiap peristiwa dilengkapi ayat Kitab Suci.",
+        tags: ["Tampilan 3D", "Ayat tiap peristiwa", "Manik bercahaya"],
       },
       {
         slug: "pusat-komunitas",
         icon: "calendar",
-        title: "Pusat Komunitas",
-        body: "Untuk pengurus komunitas: buat event dan camp, kelola panitia dan rapat, atur anggota, dan jalankan Connect Group. Semua dari satu tempat.",
+        title: "Semua Kegiatan Komunitas dalam Satu Aplikasi",
+        body: "Buat event dan camp, kelola panitia dan rapat, atur anggota, dan jalankan Connect Group. Semua kegiatan komunitasmu ada di satu tempat.",
         tags: ["Event & camp", "Connect Group", "Anggota"],
       },
       {
@@ -302,13 +302,6 @@ const id = {
         tags: ["Tampilan 3D", "Geser dial", "Manik bercahaya"],
       },
       {
-        shot: "3-rosario-ayat.jpg",
-        icon: "bible",
-        title: "Rosario dengan ayat Kitab Suci",
-        body: "Pilih Peristiwa Gembira, Terang, Sedih, atau Mulia. Setiap peristiwa dilengkapi ayat Alkitabnya, jadi kamu merenung sambil berdoa.",
-        tags: ["4 peristiwa", "Ayat tiap peristiwa", "Lompat antar bagian"],
-      },
-      {
         shot: "5-alkitab.jpg",
         icon: "bible",
         title: "Alkitab yang bisa kamu dengarkan",
@@ -316,13 +309,55 @@ const id = {
         tags: ["Dibacakan", "Cari kata", "Ayat favorit"],
       },
     ],
-    more: [
+    flows: [
+      {
+        icon: "users",
+        title: "Buka komunitasmu untuk umat Ruang Iman",
+        intro: "Dari ide sampai kegiatan nyata. Semua langkahnya ada di Pusat Komunitas.",
+        steps: [
+          {
+            title: "Buat komunitasmu",
+            body: "Beri nama, logo, dan tagline, lalu tulis halaman Tentang yang bisa dibagikan ke WhatsApp.",
+          },
+          {
+            title: "Buka untuk pengguna Ruang Iman",
+            body: "Pilih terbuka untuk siapa saja, atau perlu persetujuan admin dengan pertanyaan pendaftaran sendiri.",
+          },
+          {
+            title: "Terima anggota",
+            body: "Setujui permintaan gabung, tambahkan anggota yang sudah punya akun, dan undang yang belum.",
+          },
+          {
+            title: "Jalankan kegiatan",
+            body: "Buat event, camp, dan Connect Group, lalu kelola panitia dan anggotanya.",
+          },
+        ],
+      },
       {
         icon: "calendar",
-        title: "Pendaftaran event dan tiket QR",
-        body: "Peserta mendaftar lewat tautan pendek tanpa login dan langsung dapat tiket QR. Panitia scan di pintu, lalu unduh daftar hadir ke Excel atau PDF.",
-        soon: true,
+        title: "Tiket event dengan QR",
+        intro: "Dari pendaftaran sampai daftar hadir, tanpa kertas dan tanpa ribet.",
+        steps: [
+          {
+            title: "Bagikan tautan pendaftaran",
+            body: "Peserta mendaftar lewat tautan pendek tanpa perlu login. Akun Ruang Iman dibuatkan otomatis.",
+          },
+          {
+            title: "Tiket QR langsung jadi",
+            body: "Tiket tampil di layar dan bisa diunduh, siap ditunjukkan di pintu masuk.",
+          },
+          {
+            title: "Scan di pintu masuk",
+            body: "Panitia memindai QR untuk mencatat kehadiran, lengkap dengan waktu scan dan siapa yang memindai.",
+          },
+          {
+            title: "Unduh daftar hadir",
+            body: "Ekspor ke Excel atau PDF, atau cetak tiket A5 dan kartu nama dengan desain sendiri.",
+          },
+        ],
       },
+    ],
+    more: [
       {
         icon: "users",
         title: "Connect Group",

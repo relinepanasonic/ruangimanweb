@@ -70,7 +70,10 @@ export default function PhoneMock({ slug }: { slug: string }) {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-top"
-          style={{ backgroundImage: `url(/features/screens/${slug}.png)` }}
+          // Layered: whichever of the two files exists paints, the other is skipped.
+          style={{
+            backgroundImage: `url(/features/screens/${slug}.png), url(/features/screens/${slug}.jpg)`,
+          }}
         />
 
         {/* Notch */}

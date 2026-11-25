@@ -3,7 +3,7 @@
  *
  * The photo is a CSS background, not an <img>: a missing file then renders as
  * nothing and the initials underneath stay visible, instead of a broken-image
- * glyph. Drop `public/tony.png` in and it appears with no code change.
+ * glyph. Drop `public/tony.jpg` in and it appears with no code change.
  */
 export default function FounderAvatar({
   name,
