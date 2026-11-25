@@ -1,0 +1,425 @@
+@import "tailwindcss";
+
+/* =====================================================
+   Brand tokens — ported verbatim from the Ruang Iman app
+   (PriskatCFM/src/app/globals.css). Do not invent new
+   brand values here; change them in the app first.
+   ===================================================== */
+@theme {
+  /* Ground: black through charcoal. The app's #272A30 is the lightest step
+     here, not the base — this site sits darker so the gold carries. */
+  --color-brand-bg: #16181c;
+  --color-brand-dark: #0e1013;
+  --color-brand-deep: #08090b;
+
+  /* Panels. Warm-neutral charcoal, deliberately NOT the app's blue #394F6B:
+     the brief for this site is black / gold / grey only. */
+  --color-brand-surface: #1e2127;
+  --color-brand-surface-hover: #262a31;
+  --color-brand-elevated: #23272e;
+  --color-brand-surface-beige: #c6b9a3;
+  --color-brand-border: #2a2e35;
+
+  --color-brand-gold: #d6b072;
+  --color-brand-gold-hover: #ffd770;
+  --color-brand-gold-deep: #a8875010;
+
+  --color-brand-light: #eae5d9;
+  --color-brand-muted: #9ca3af;
+  --color-brand-faint: #6b7280;
+
+  --shadow-3d: 0 8px 16px -4px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  --shadow-3d-sm: 0 4px 8px -2px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  --shadow-3d-inset: inset 0 2px 6px rgba(0, 0, 0, 0.7);
+  --shadow-glow-gold: 0 0 15px rgba(255, 215, 112, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+/* =====================================================
+   Base
+   ===================================================== */
+:root {
+  color-scheme: dark;
+}
+
+html {
+  /* Lenis drives the scroll — a CSS smooth-scroll on top of it fights the
+     rAF loop and makes anchor jumps stutter. */
+  scroll-behavior: auto;
+  background-color: var(--color-brand-deep);
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-light);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  /* Pinned + horizontally-tweened sections can overhang by a pixel mid-tween. */
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-brand-gold);
+  color: var(--color-brand-dark);
+}
+
+/* Lenis: it sets these itself, but declaring them avoids a first-paint jump. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* =====================================================
+   Glassy scrollbar — same treatment as the app
+   ===================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+/* The Bible bookshelf drags sideways with no visible bar (.hide-scrollbar);
+   the open-book chapter page keeps a faint dark one (.custom-scrollbar). */
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(42, 37, 32, 0.35);
+}
+
+/* The home page mounts a fixed 272px left rail. The page's own sections pad
+   themselves clear of it, but the footer lives in the layout and can't know
+   which route is rendering — so the rail flags it on <body> instead. */
+@media (min-width: 1024px) {
+  body.has-rail > footer {
+    padding-left: 272px;
+  }
+}
+
+/* The giant wordmark is sized to very nearly span the stage. On a phone that
+   would run it under the top bar, so it starts lower and smaller there. */
+[data-wordmark] {
+  top: 11vh;
+  font-size: min(13.5vw, 10vh);
+}
+@media (min-width: 1024px) {
+  [data-wordmark] {
+    top: 3vh;
+    font-size: min(15vw, 26vh);
+  }
+}
+
+/* Reduced motion: the rail never flies in, so showing it would just park a
+   panel on top of the hero. Stand it down and hand navigation back to the
+   ordinary top bar — the same layout a tablet gets. */
+@media (prefers-reduced-motion: reduce) {
+  [data-home-rail] {
+    display: none;
+  }
+  [data-home-bar] {
+    display: block;
+  }
+  [data-rail-offset] {
+    padding-left: 0;
+  }
+  body.has-rail > footer {
+    padding-left: 0;
+  }
+  /* With the top bar back, the wordmark has to start below it. */
+  [data-wordmark] {
+    top: 11vh;
+  }
+  /* The stat cards live in the rail and would leave with it, so the ghosts
+     that describe their hero position step in and become the real thing. */
+  [data-ghost-stats] {
+    opacity: 1;
+  }
+}
+
+/* =====================================================
+   Utilities
+   ===================================================== */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Members wall card size. clamp() rather than a fixed number: on a wide
+   desktop window a flat 236px sat noticeably larger than the reference, and
+   didn't shrink at all until the layout's own md breakpoint. This scales
+   continuously with the viewport — roughly 6-7 columns visible at a typical
+   1440-1600px window, the same density the reference holds. */
+[data-field] {
+  /* 10% smaller than the previous clamp(148px, 11.5vw, 202px) — closer to the
+     reference's card density. Both ends and the vw term scaled by 0.9. */
+  --voice-card-w: clamp(133px, 10.35vw, 182px);
+  --voice-gap: clamp(42px, 3.9vw, 66px);
+}
+
+/* Members wall: each card bobs on its own clock (duration and delay are set
+   per card in VoicesWall) so the field never pulses in unison. This runs on
+   the INNER element — the outer one is rewritten every frame with the depth
+   transform, and the two would overwrite each other on one node. */
+@keyframes voice-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.5deg);
+  }
+}
+
+/* The reading panel lights up as you scroll. One handler sets --read (0–1) on
+   the container; every word carries its own --i and works out its own opacity
+   from there, so a thousand spans cost no extra JS. The +26 is the run of
+   words already lit before you've scrolled at all. */
+[data-reveal-text] span {
+  opacity: clamp(
+    0.22,
+    calc((var(--read, 0) * var(--total, 1) + 26 - var(--i, 0)) * 0.08 + 0.22),
+    1
+  );
+  transition: opacity 140ms linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-text] span {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* Custom pointer (components/Cursor.tsx). The native cursor is only hidden
+   while `has-cursor` is set, which that component only does for a real mouse
+   with motion allowed — so touch, keyboard and reduced-motion visitors keep
+   the normal pointer rather than losing it entirely. Form fields keep theirs
+   either way: an I-beam is genuinely useful and a dot is not. */
+.has-cursor,
+.has-cursor *:not(input):not(textarea):not([contenteditable="true"]) {
+  cursor: none;
+}
+
+/* A modal <dialog> (the members reader) renders in the top layer, above the
+   custom cursor's own elements — so inside it the gold dot is hidden and, with
+   `cursor: none` still in force, the visitor is left with no pointer at all,
+   unable to aim at the close button or the scrollbar. Give the native cursor
+   back for anything open in the top layer. */
+.has-cursor dialog[open],
+.has-cursor dialog[open] *:not(input):not(textarea):not([contenteditable="true"]) {
+  cursor: auto;
+}
+.has-cursor dialog[open] a,
+.has-cursor dialog[open] button,
+.has-cursor dialog[open] [role="button"],
+.has-cursor dialog[open] [data-cursor-hover] {
+  cursor: pointer;
+}
+
+/* The phone inside a feature card. Its screen is authored at a fixed 320x640
+   and scaled to fit, and `transform: scale()` needs a plain number — which CSS
+   can't derive from a container's size on its own. So --phone-w is expressed in
+   container query units against [data-phone-slot] (the flex-1 area around it),
+   and --phone-s (always width / 320) is derived from that in the same
+   declaration — one continuous fit at every card height, full phone always,
+   rather than the five discrete sizes a max-height media-query ladder gave.
+   46cqh keeps a comfortable margin above and below at the 2:1 aspect ratio;
+   the 78cqw cap only bites if the slot is ever wider than it is tall. */
+[data-phone-slot] {
+  container-type: size;
+}
+[data-phone] {
+  --phone-w: min(60cqh, 100cqw);
+  /* scale() needs a unitless <number>. length ÷ length (not ÷ a bare number)
+     is what CSS actually resolves to a number, hence the explicit `320px`. */
+  --phone-s: calc(var(--phone-w) / 320px);
+}
+
+/* The rail is a fixed-height column of panels. On a short window its content
+   can exceed the viewport and the CTA at the bottom gets cut — let it scroll
+   rather than disappear. */
+@media (min-width: 1024px) and (max-height: 700px) {
+  [data-home-rail] {
+    gap: 0.5rem;
+    padding: 0.625rem;
+    overflow-y: auto;
+  }
+}
+
+/* Frosted panel. One definition so the journey cards, the rail panels and the
+   slider chips are all cut from the same glass rather than three near-misses.
+   The diagonal tint plus the inset top highlight is what reads as a lit edge —
+   a flat translucent fill on its own just looks like low opacity. */
+@utility glass {
+  background-image: linear-gradient(
+    158deg,
+    rgba(255, 255, 255, 0.085) 0%,
+    rgba(255, 255, 255, 0.022) 46%,
+    rgba(255, 255, 255, 0.055) 100%
+  );
+  background-color: rgba(22, 24, 28, 0.55);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 20px 55px -22px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* Same glass, thinner — for chips and small controls sitting on artwork. */
+@utility glass-chip {
+  background-color: rgba(10, 11, 13, 0.42);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Film-grain overlay. A CSS-only tile keeps it to zero network bytes. */
+@utility grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Members-wall card border glow. A gold "LED" that lights only the border ring
+   and chases the pointer: the radial-gradient is centred on --mx/--my (pixel
+   coords the wall writes onto the [data-voice-card] wrapper on pointermove),
+   and the two-layer mask keeps only the 1.5px border band visible. The heavy
+   bits are scoped to [data-glow] so the ~80 idle copies cost nothing. */
+.voice-glow {
+  opacity: 0;
+  transition: opacity 240ms ease;
+}
+[data-voice-card][data-glow] .voice-glow {
+  opacity: 1;
+  padding: 1.5px;
+  background: radial-gradient(
+    130px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 215, 112, 0.95),
+    rgba(214, 176, 114, 0.38) 42%,
+    rgba(214, 176, 114, 0) 72%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+/* Gold sheen for accent words. Stays inside the gold range end-to-end — an
+   earlier version faded to cream, which made the accent word blend into the
+   plain cream text beside it. */
+@utility text-gradient-gold {
+  background-image: linear-gradient(100deg, #ffd770 0%, #d6b072 45%, #ffe4a6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* =====================================================
+   Blog prose — mirrors the app's .news-body rules so a post
+   reads the same here as it does inside Ruang Iman.
+   ===================================================== */
+.prose-iman {
+  color: var(--color-brand-light);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+.prose-iman h1,
+.prose-iman h2,
+.prose-iman h3,
+.prose-iman h4 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.prose-iman h1 { font-size: 2rem; margin: 2.5rem 0 1rem; }
+.prose-iman h2 { font-size: 1.6rem; margin: 2.25rem 0 0.85rem; }
+.prose-iman h3 { font-size: 1.3rem; margin: 1.75rem 0 0.6rem; font-weight: 600; }
+.prose-iman p { margin-bottom: 1.25rem; }
+.prose-iman ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.prose-iman ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.prose-iman li { margin-bottom: 0.4rem; }
+.prose-iman blockquote {
+  border-left: 3px solid var(--color-brand-gold);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  margin: 1.75rem 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-brand-surface-beige);
+}
+.prose-iman a {
+  color: var(--color-brand-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-iman a:hover { color: var(--color-brand-gold-hover); }
+.prose-iman strong { color: #fff; font-weight: 600; }
+.prose-iman img { border-radius: 0.75rem; margin: 1.75rem 0; width: 100%; }
+.prose-iman hr { border-color: rgba(234, 229, 217, 0.14); margin: 2.5rem 0; }
+.prose-iman code {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3rem;
+  font-size: 0.9em;
+}
+.prose-iman table { width: 100%; border-collapse: collapse; margin: 1.75rem 0; font-size: 0.95rem; }
+.prose-iman th,
+.prose-iman td { border: 1px solid rgba(234, 229, 217, 0.14); padding: 0.6rem 0.8rem; text-align: left; }
+.prose-iman th { background: rgba(255, 255, 255, 0.05); color: #fff; font-weight: 600; }
+
+/* Note: the no-JS fallback for [data-reveal] elements lives in a <noscript>
+   block in app/[lang]/layout.tsx — it has to be inside <noscript> to apply
+   only when scripting is off. */
+
+/* =====================================================
+   Reduced motion — every scroll effect degrades to its
+   finished state rather than animating.
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

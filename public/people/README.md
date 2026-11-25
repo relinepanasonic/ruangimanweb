@@ -1,0 +1,146 @@
+# Member art
+
+Two separate things, in two folders:
+
+| File | Size | Used where |
+|---|---|---|
+| `public/people/<slug>.jpg` | 400 × 400 square | the round avatar — **all 20 people** |
+| `public/people/cards/<slug>.jpg` | 640 × 560 landscape | the picture panel at the top of a card — **13 people only** |
+
+Missing files render as the gold monogram and an empty panel. Nothing breaks, and you can add them one at a time.
+
+## Which people get a card picture
+
+Set by `media` in `src/i18n/dictionaries/voices.id.ts`. The mix is deliberate — the text-only cards are what give the wall its rhythm, so don't give all twenty a picture.
+
+**`portrait`** — a still of them mid-sentence, as if paused in a video:
+`damar` · `maria` · `theresia` · `veronika` · `stefanus` · `angela`
+
+**`community`** — them among their community:
+`bernardus` · `yosef` · `fransiska` · `ignasius` · `markus` · `petrus` · `yustinus`
+
+**`none`** — no picture, type only:
+`yohana` · `clara` · `antonius` · `gregorius` · `agnes` · `lidwina` · `katarina`
+
+---
+
+# Generation prompts (Easy Copy-Paste)
+
+The following prompts are ready to be copy-pasted into your image generator of choice. They have the house style and specific details pre-combined into a single prompt for each image.
+
+## Avatars (All 20 people, Square Crop)
+
+### `damar` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Chinese-Indonesian (Chindo) man in his late 20s, sharp jawline, narrow eyes, stylish messy-fringe haircut, wearing a crisp white linen button-down shirt. Softly blurred background of a modern creative studio.
+
+### `yohana` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Batak woman in her mid 20s, distinct high cheekbones, wavy dark hair elegantly tied in a low ponytail, wearing a chic emerald green silk blouse and delicate gold necklace. Softly blurred background of a high-end boutique interior.
+
+### `bernardus` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a young man in his late 20s, Flores heritage, tanned skin, prominent brow bone, curly short hair, wearing a fitted navy blue polo shirt and stylish sunglasses resting on his head. Softly blurred background of a sunny marina or coastal resort.
+
+### `clara` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Javanese woman in her early 30s, soft round face, warm almond eyes, shoulder-length straight bob haircut, wearing a modern minimalist batik top in terracotta. Softly blurred background of an upscale cultural art gallery.
+
+### `yosef` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Papuan man in his late 20s, strong square jaw, dark skin, well-groomed faded beard and short buzzcut, wearing a casual beige linen blazer over a black t-shirt. Softly blurred background of a modern corporate lobby.
+
+### `maria` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Minahasan woman in her late 20s, expressive wide smile showing teeth, long voluminous wavy brown hair, wearing a stylish mustard yellow ribbed turtleneck. Softly blurred background of an aesthetic sunlit music room.
+
+### `antonius` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Chinese-Indonesian (Chindo) man in his early 30s, round face, wearing stylish thick-rimmed tortoiseshell glasses, combed back hair, wearing a smart-casual light blue oxford shirt. Softly blurred background of a chic coffee roastery.
+
+### `fransiska` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a woman in her late 20s, oval face shape, short pixie cut hair, modern and artistic, wearing a dark oversized blazer with layered silver necklaces. Softly blurred background of a vibrant urban botanical garden.
+
+### `gregorius` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Torajan man in his early 30s, rugged handsome features, slight stubble, wavy hair parted in the middle, wearing a trendy thick olive-green knit sweater. Softly blurred background of a cozy luxury cabin interior.
+
+### `theresia` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Javanese woman in her early 30s, sophisticated narrow face, hair elegantly styled in an updo with loose strands, wearing a sleek black dress with pearl earrings. Softly blurred background of an elegant fine-dining restaurant.
+
+### `ignasius` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Karo Batak man in his late 20s, sharp angular face, energetic wide eyes, neat side-part haircut, wearing a modern denim jacket over a white tee. Softly blurred background of a bustling upscale city street.
+
+### `veronika` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Chinese-Indonesian (Chindo) woman in her late 20s, soft heart-shaped face, straight hair with bangs, wearing a sweet pastel pink floral blouse. Softly blurred background of a bright minimalist bakery.
+
+### `markus` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a man in his early 30s, friendly round face, thick eyebrows, slightly receding hairline but very well-styled, wearing a nice casual grey chambray shirt. Softly blurred background of a sleek modern bookstore.
+
+### `agnes` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a woman in her mid 20s, Flores heritage, glowing golden-brown skin, striking almond eyes, very curly natural hair left loose, wearing a bright coral summer dress. Softly blurred background of a luxury tropical villa.
+
+### `petrus` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a man in his late 20s, Ambon/Maluku heritage, strong facial features, bright confident smile, curly hair faded at the sides, wearing a smart casual maroon button-up shirt. Softly blurred background of a sunny contemporary courtyard.
+
+### `lidwina` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Chinese-Indonesian (Chindo) woman aged 22, cute round face, wearing thin wire-rimmed round glasses, hair in twin braids, trendy aesthetic style wearing a pastel oversized cardigan. Softly blurred background of a modern university library.
+
+### `stefanus` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Dayak man in his late 20s, defined cheekbones, narrow intense eyes, very neat undercut hairstyle, wearing a premium heavy-cotton black t-shirt. Softly blurred background of an aesthetic tech startup office.
+
+### `katarina` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Batak woman in her early 30s, confident mature face, bold red lipstick, long straight black hair, wearing modern professional attire like a sharp white suit jacket. Softly blurred background of a high-rise executive lounge.
+
+### `yustinus` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a Javanese man in his mid 20s, very friendly boyish face, slight dimples when smiling, messy textured fringe hair, wearing a stylish corduroy overshirt. Softly blurred background of a trendy vinyl record shop.
+
+### `angela` (Avatar)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. Tight head-and-shoulders portrait, face filling most of the frame, looking directly at the camera with a friendly and inviting smile. Square crop. a woman in her late 20s, vibrant and flawless makeup with winged eyeliner, shoulder-length wavy hair tinted with auburn highlights, fashionable off-shoulder top. Softly blurred background of a beautiful rooftop terrace overlooking the city.
+
+## Card Pictures — Portrait (6 people, Landscape Crop)
+
+### `damar` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. in a modern aesthetic cafe, holding a coffee cup, laughing with someone off-camera.
+
+### `maria` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. in a bright modern music room, stylish acoustic panels, smiling brightly.
+
+### `theresia` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. in a beautiful modern kitchen with marble countertops, holding a glass of juice, laughing.
+
+### `veronika` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. in a chic urban living room, nice modern furniture, smiling warmly.
+
+### `stefanus` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. in a brightly lit modern office space, leaning casually against a glass desk, cheerful.
+
+### `angela` (Card Portrait)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A cheerful candid moment, laughing or smiling warmly while talking, looking slightly off-camera at an unseen friend. Shallow focus, beautiful modern indoor background well behind them. Landscape crop, subject on one third. outside a modern glass building, bright sunny day, holding a stylish tote bag, smiling.
+
+## Card Pictures — Community (7 people, Landscape Crop)
+
+### `bernardus` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a group of stylish young adults laughing together at an upscale outdoor brunch, sunny day.
+
+### `yosef` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a group of diverse young friends playing acoustic guitar and singing happily in a modern park.
+
+### `fransiska` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a lively group discussion in a modern co-working space, young people smiling and brainstorming.
+
+### `ignasius` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. young adults volunteering joyfully at a modern community center, wearing matching stylish t-shirts.
+
+### `markus` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a group of young professionals laughing together over coffee at a trendy aesthetic cafe.
+
+### `petrus` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a beautiful outdoor modern event, young guests laughing and celebrating in stylish attire.
+
+### `yustinus` (Card Community)
+> High-quality editorial photography, bright and airy natural light, shot on a 50mm lens at f/2. Cheerful, young, and vibrant Indonesian people from middle to upper-middle class backgrounds, wearing stylish smart-casual attire. Candid joyful expression, authentic warm smile, well-groomed, modern urban lifestyle. Fine natural grain, photorealistic. No text, no logos, no watermarks. A group of well-dressed, happy people caught in the middle of a fun activity together, laughing and smiling. Bright, uplifting atmosphere. Several people, warm beautiful light, dynamic composition. Landscape crop. a group of happy young friends taking a fun group selfie in a beautiful modern art gallery.
+
+---
+
+## On the verses
+
+`voices.id.ts` carries a `verse` field, and it is deliberately **a reference only** — "Matius 18:20" — never the translated text. Indonesian Scripture translations are under copyright; a citation isn't. It also reads better on a card than a wrapped block of quoted text.
+
+---
+
+## ⚠️ Before this goes public
+
+**All twenty of these people are invented.** They exist so the wall reads as a community instead of a placeholder, and the page says so — a "Cerita ilustrasi" chip under the title, plus a line at the bottom of each person's panel.

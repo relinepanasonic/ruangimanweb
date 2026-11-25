@@ -1,0 +1,224 @@
+[
+  {
+    "x": 151,
+    "y": 122,
+    "name": "Keuskupan Agung Medan",
+    "bishop": "Mgr. Kornelius Sipayung, OFMCap"
+  },
+  {
+    "x": 190,
+    "y": 220,
+    "name": "Keuskupan Sibolga",
+    "bishop": "Mgr. Fransiskus Tuaman Sasfo Sinaga"
+  },
+  {
+    "x": 240,
+    "y": 320,
+    "name": "Keuskupan Padang",
+    "bishop": "Mgr. Vitus Rubianto Solichin, SX"
+  },
+  {
+    "x": 350,
+    "y": 480,
+    "name": "Keuskupan Agung Palembang",
+    "bishop": "Mgr. Yohanes Harun Yuwono"
+  },
+  {
+    "x": 410,
+    "y": 550,
+    "name": "Keuskupan Tanjungkarang",
+    "bishop": "Mgr. Vinsensius Setiawan Triatmojo"
+  },
+  {
+    "x": 380,
+    "y": 440,
+    "name": "Keuskupan Pangkalpinang",
+    "bishop": "Mgr. Adrianus Sunarko, OFM"
+  },
+  {
+    "x": 483,
+    "y": 618,
+    "name": "Keuskupan Agung Jakarta",
+    "bishop": "Ignatius Kardinal Suharyo"
+  },
+  {
+    "x": 495,
+    "y": 625,
+    "name": "Keuskupan Bogor",
+    "bishop": "Mgr. Paskalis Bruno Syukur, OFM"
+  },
+  {
+    "x": 520,
+    "y": 635,
+    "name": "Keuskupan Bandung",
+    "bishop": "Mgr. Antonius Subianto Bunjamin, OSC"
+  },
+  {
+    "x": 600,
+    "y": 640,
+    "name": "Keuskupan Purwokerto",
+    "bishop": "Mgr. Christophorus Tri Harsono"
+  },
+  {
+    "x": 620,
+    "y": 620,
+    "name": "Keuskupan Agung Semarang",
+    "bishop": "Mgr. Robertus Rubiyatmoko"
+  },
+  {
+    "x": 724,
+    "y": 671,
+    "name": "Keuskupan Surabaya",
+    "bishop": "Mgr. Agustinus Tri Budi Utomo"
+  },
+  {
+    "x": 730,
+    "y": 690,
+    "name": "Keuskupan Malang",
+    "bishop": "Mgr. Henricus Pidyarto Gunawan, O.Carm"
+  },
+  {
+    "x": 550,
+    "y": 350,
+    "name": "Keuskupan Agung Pontianak",
+    "bishop": "Mgr. Agustinus Agus"
+  },
+  {
+    "x": 600,
+    "y": 320,
+    "name": "Keuskupan Sanggau",
+    "bishop": "Mgr. Valentinus Saeng, CP"
+  },
+  {
+    "x": 650,
+    "y": 330,
+    "name": "Keuskupan Sintang",
+    "bishop": "Mgr. Samuel Oton Sidin, OFMCap"
+  },
+  {
+    "x": 600,
+    "y": 450,
+    "name": "Keuskupan Ketapang",
+    "bishop": "Mgr. Pius Riana Prapdi"
+  },
+  {
+    "x": 750,
+    "y": 450,
+    "name": "Keuskupan Palangkaraya",
+    "bishop": "Mgr. Aloysius Maryadi Sutrisnaatmaka, MSF"
+  },
+  {
+    "x": 800,
+    "y": 550,
+    "name": "Keuskupan Banjarmasin",
+    "bishop": "Mgr. Victorius Dwiardy, OFMCap"
+  },
+  {
+    "x": 850,
+    "y": 350,
+    "name": "Keuskupan Agung Samarinda",
+    "bishop": "Mgr. Yustinus Harjosusanto, MSF"
+  },
+  {
+    "x": 850,
+    "y": 200,
+    "name": "Keuskupan Tanjung Selor",
+    "bishop": "Mgr. Paulinus Yan Olla, MSF"
+  },
+  {
+    "x": 800,
+    "y": 720,
+    "name": "Keuskupan Denpasar",
+    "bishop": "Mgr. Silvester Tung Kiem San"
+  },
+  {
+    "x": 950,
+    "y": 740,
+    "name": "Keuskupan Ruteng",
+    "bishop": "Mgr. Siprianus Horma"
+  },
+  {
+    "x": 1000,
+    "y": 750,
+    "name": "Keuskupan Agung Ende",
+    "bishop": "Mgr. Paulus Budi Kleden, SVD"
+  },
+  {
+    "x": 1050,
+    "y": 740,
+    "name": "Keuskupan Maumere",
+    "bishop": "Mgr. Edwaldus Martinus Sedu"
+  },
+  {
+    "x": 1100,
+    "y": 730,
+    "name": "Keuskupan Larantuka",
+    "bishop": "Mgr. Fransiskus Kopong Kung"
+  },
+  {
+    "x": 1050,
+    "y": 800,
+    "name": "Keuskupan Agung Kupang",
+    "bishop": "Mgr. Hironimus Paskalis"
+  },
+  {
+    "x": 1100,
+    "y": 780,
+    "name": "Keuskupan Atambua",
+    "bishop": "Mgr. Dominikus Saku"
+  },
+  {
+    "x": 950,
+    "y": 800,
+    "name": "Keuskupan Weetebula",
+    "bishop": "Mgr. Edmund Woga, CSsR"
+  },
+  {
+    "x": 995,
+    "y": 565,
+    "name": "Keuskupan Agung Makassar",
+    "bishop": "Mgr. Fransiskus Nipa"
+  },
+  {
+    "x": 1100,
+    "y": 150,
+    "name": "Keuskupan Manado",
+    "bishop": "Mgr. Benedictus Estephanus Rolly Untu, MSC"
+  },
+  {
+    "x": 1350,
+    "y": 550,
+    "name": "Keuskupan Amboina",
+    "bishop": "Mgr. Seno Ngutra"
+  },
+  {
+    "x": 1400,
+    "y": 350,
+    "name": "Keuskupan Manokwari-Sorong",
+    "bishop": "Mgr. Hilarion Datus Lega"
+  },
+  {
+    "x": 1650,
+    "y": 462,
+    "name": "Keuskupan Jayapura",
+    "bishop": "Mgr. Yanuarius Teofilus Matopai You"
+  },
+  {
+    "x": 1550,
+    "y": 550,
+    "name": "Keuskupan Timika",
+    "bishop": "Administrator Diosesan"
+  },
+  {
+    "x": 1600,
+    "y": 600,
+    "name": "Keuskupan Agats",
+    "bishop": "Mgr. Aloysius Murwito, OFM"
+  },
+  {
+    "x": 1720,
+    "y": 650,
+    "name": "Keuskupan Agung Merauke",
+    "bishop": "Mgr. Petrus Canisius Mandagi, MSC"
+  }
+]
